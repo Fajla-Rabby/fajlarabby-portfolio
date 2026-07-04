@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand: dark base + one acid-green accent. Reuse #a3e635 on LinkedIn/GitHub/Upwork banners. */
+  /* named "night" (not "base") so text-night never clashes with the text-base font-size utility */
+  --color-night: #0a0c10;
+  --color-surface: #11141b;
+  --color-edge: #1f2430;
+  --color-mist: #9aa3b2;
+  --color-accent: #a3e635;
+  --color-accent-dim: #86c22b;
+
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+html {
+  scroll-padding-top: 5rem;
+}
+
+body {
+  @apply bg-night text-neutral-200 font-body antialiased;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-night);
+}
+
+/* Animated underline for inline links */
+.link-underline {
+  background-image: linear-gradient(var(--color-accent), var(--color-accent));
+  background-size: 0% 1.5px;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  transition: background-size 0.3s ease;
+  padding-bottom: 2px;
+}
+.link-underline:hover,
+.link-underline:focus-visible {
+  background-size: 100% 1.5px;
+}
+
+/* Static fallback background for the hero (mobile / reduced motion / while 3D loads) */
+.hero-fallback {
+  background-image:
+    radial-gradient(ellipse 80% 55% at 50% -10%, rgba(163, 230, 53, 0.09), transparent),
+    radial-gradient(circle at 1px 1px, rgba(154, 163, 178, 0.13) 1px, transparent 0);
+  background-size: 100% 100%, 28px 28px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
