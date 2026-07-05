@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="border-t border-edge">
       <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-8 text-sm text-mist">
         <p>
-          © {new Date().getFullYear()} Md. Fajla Rabby · Backend Developer, Dhaka 🇧🇩
+          © {new Date().getFullYear()} Md. Fajla Rabby · Backend Developer, Dhaka, Bangladesh
         </p>
         <div className="flex gap-6">
           <a href={`mailto:${links.email}`} className="link-underline hover:text-white">Email</a>

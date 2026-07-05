@@ -22,11 +22,11 @@ export default function Contact() {
         <Reveal>
           <Eyebrow n="06">Contact</Eyebrow>
           <h2 className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            Hiring a backend engineer — or stuck on an AI integration?
+            Let's talk.
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-mist">
-            Tell me what you're building and what's in the way. I usually reply within 24 hours
-            with an honest take on whether — and how — I can help.
+            Whether you're hiring a backend engineer or need help with an AI integration, tell me
+            about your project. I usually reply within 24 hours.
           </p>
           <ul className="mt-8 space-y-3 text-[15px]">
             <li>
@@ -65,12 +65,12 @@ export default function Contact() {
               <input name="from" type="email" required placeholder="you@company.com" className={`${inputCls} mt-1.5`} />
             </label>
             <label className="flex grow flex-col text-sm font-medium text-mist">
-              What do you need built or fixed?
+              How can I help?
               <textarea
                 name="message"
                 required
                 rows={5}
-                placeholder="e.g. We need to integrate OpenAI into our Laravel app without blowing up our billing…"
+                placeholder="e.g. We're integrating OpenAI into our Laravel application and need help with reliability and billing."
                 className={`${inputCls} mt-1.5 grow resize-none`}
               />
             </label>

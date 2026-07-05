@@ -8,7 +8,7 @@ export default function Process() {
       <Reveal>
         <Eyebrow n="04">How I work</Eyebrow>
         <h2 className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">
-          The discipline behind the case studies.
+          How I approach engineering work.
         </h2>
       </Reveal>
 
@@ -30,10 +30,10 @@ export default function Process() {
             <ShieldIcon />
           </span>
           <p className="text-[15px] leading-relaxed text-neutral-200">
-            <strong className="font-display text-white">CI-green discipline:</strong> every change I
-            merge passes static analysis, style gates, and the full test suite before review —
-            whether that's PHPStan/Pint/Pest on a Laravel monolith or gofmt/vet/fixture gates on a
-            Go service. The next developer can change my code without fear.
+            <strong className="font-display text-white">Quality gates:</strong> every change I merge
+            passes static analysis, style checks, and the full test suite — PHPStan, Pint, and Pest
+            on Laravel; gofmt, vet, and fixture gates on Go — so the next developer can modify the
+            code with confidence.
           </p>
         </div>
       </Reveal>

@@ -9,17 +9,15 @@ export default function About() {
         <div className="grid gap-10 md:grid-cols-[1fr_320px]">
           <div>
             <h2 className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              I learned reliability on mission-critical ERP systems.
-              <br />
-              Now I apply it to AI.
+              From enterprise ERP systems to production AI infrastructure.
             </h2>
             <div className="mt-6 space-y-4 text-lg leading-relaxed text-mist">
               <p>
-                I started my career at Logic Software building Oracle-backed ERP systems — the kind
-                where a slow report blocks a whole department and a wrong number costs real money.
-                That's where I learned to treat performance, correctness, and data integrity as
-                non-negotiable — and where I took multi-million-row report loads from minutes to
-                seconds by rewriting the SQL underneath.
+                I started my career at Logic Software building Oracle-backed ERP systems, where
+                report performance and data accuracy directly affected daily business operations.
+                That experience taught me to treat performance, correctness, and data integrity as
+                fundamentals — and it's where I reduced multi-million-row report load times from
+                minutes to seconds by rewriting the underlying SQL.
               </p>
               <p>
                 Today I bring that discipline to{' '}
@@ -30,13 +28,13 @@ export default function About() {
                 that summarizes YouTube videos, podcasts, audio, and documents through a
                 multi-provider LLM pipeline — and on the multi-tenant Go platform behind its quiz
                 micro-apps, where LLM output is validated, repaired, and citation-checked before a
-                user ever sees it. Not prototypes — the unglamorous parts that make AI products
-                actually dependable: provider fallback, key isolation, billing sagas, retry
+                user ever sees it. My focus is the infrastructure that makes AI products
+                dependable: provider fallback, key isolation, billing consistency, retry
                 semantics, and security hardening.
               </p>
               <p className="font-medium text-neutral-200">
-                If you need someone who can bolt an LLM onto your product <em>and</em> make sure it
-                still works at 3am under retry storms — that's the job I do every day.
+                In short: I integrate LLMs into production systems and make sure they stay
+                reliable under real-world failure conditions.
               </p>
             </div>
           </div>

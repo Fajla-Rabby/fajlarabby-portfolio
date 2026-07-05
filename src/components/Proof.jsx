@@ -11,11 +11,11 @@ export default function Proof() {
       <Reveal>
         <Eyebrow n="05">Track record</Eyebrow>
         <h2 className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">
-          Outcomes you can ask me about.
+          Measurable outcomes.
         </h2>
         <p className="mt-4 max-w-2xl text-lg text-mist">
-          Every number here maps to a case study above — and I'm happy to walk through any of them
-          in detail on a call.
+          Each of these corresponds to a case study above, and I'm happy to discuss any of them in
+          detail.
         </p>
       </Reveal>
 

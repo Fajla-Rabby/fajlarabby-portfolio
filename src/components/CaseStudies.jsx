@@ -17,10 +17,10 @@ export default function CaseStudies() {
       <Reveal>
         <Eyebrow n="02">Case studies</Eyebrow>
         <h2 className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl">
-          Real problems, shipped solutions.
+          Selected production work.
         </h2>
         <p className="mt-4 max-w-2xl text-lg text-mist">
-          Every one of these is resume-backed production work — not tutorials or side experiments.
+          All of these are from my professional roles, structured as problem, approach, and result.
         </p>
       </Reveal>
 
@@ -55,8 +55,8 @@ export default function CaseStudies() {
       <Reveal delay={0.1}>
         <div className="mt-12 flex flex-wrap items-center justify-between gap-4 rounded-lg border border-edge bg-surface p-6">
           <p className="text-lg text-neutral-200">
-            Have a similar problem in your stack?{' '}
-            <span className="text-mist">Let's talk about what "fixed" looks like.</span>
+            Working on similar problems?{' '}
+            <span className="text-mist">I'm happy to discuss them in detail.</span>
           </p>
           <a
             href={`mailto:${links.email}?subject=Project inquiry`}

@@ -36,18 +36,18 @@ export const caseStudies = [
     approach:
       'Built a LiteLLM gateway with BYOK key isolation, streaming-truncation retry, and automatic provider fallback across OpenAI, Azure OpenAI, Claude, Gemini, and OpenRouter. Migrated billing to a credit-based reserve → settle → refund saga.',
     result:
-      'Eliminated 3 recurring classes of production incidents. AI calls degrade gracefully instead of failing loudly — and billing stays consistent under retries.',
+      'Eliminated 3 recurring classes of production incidents. Provider failures now degrade gracefully, and billing remains consistent under retries.',
     stack: ['LiteLLM', 'BYOK', 'Saga pattern', 'Redis'],
   },
   {
     tag: 'TubeOnAI · Quiz Micro-Apps (Go)',
     title: 'Validated, Citation-Checked LLM Output',
     problem:
-      'LLMs return malformed quiz JSON — wrong question counts, unanswerable items, hallucinated citations. Shipping raw model output meant shipping broken quizzes.',
+      'LLMs can return malformed quiz JSON — wrong question counts, unanswerable items, or citations not present in the source — so raw model output could not be used directly.',
     approach:
       'On the platform’s quiz-generation pipeline, worked on a strict JSON contract with a validate → repair loop that feeds concrete validation failures back to the model — plus server-verified citations: the model must supply a verbatim source quote, which the backend locates in the source to derive the page or timestamp itself.',
     result:
-      'The pipeline yields exactly N answerable, source-cited questions or a clean handled error — never a half-built quiz. Verified live end-to-end against real LLMs.',
+      'The pipeline returns exactly N answerable, source-cited questions or a cleanly handled error — partially valid output never reaches users. Verified end-to-end against production LLMs.',
     stack: ['Go', 'PostgreSQL', 'Redis', 'Prompt engineering'],
   },
   {
@@ -63,13 +63,13 @@ export const caseStudies = [
   },
   {
     tag: 'TubeOnAI · Scale',
-    title: 'Shedding 90% of Webhook Traffic at the Edge',
+    title: 'Filtering 90% of Webhook Traffic at the Edge',
     problem:
-      "YouTube's PubSubHubbub fires a webhook for every channel event. At TubeOnAI's channel scale, ~90% of that traffic was irrelevant — flooding queues and causing duplicate-delivery race conditions on video creation.",
+      "YouTube's PubSubHubbub sends a webhook for every channel event. At TubeOnAI's channel scale, roughly 90% of that traffic was irrelevant, adding unnecessary queue load and causing duplicate-delivery race conditions on video creation.",
     approach:
       'Contributed to a pipeline that puts Terraform-provisioned Azure Functions in front of Laravel: synchronous filters drop deletes, edits, and stale events; an async duration check drops Shorts and live streams; Redis dedupes deliveries; and survivors arrive through an Azure Service Bus queue with dead-lettering.',
     result:
-      'Only ~10% of webhook traffic reaches the backend. Duplicate-driven race conditions eliminated; queue pressure and infrastructure cost cut dramatically.',
+      'Only around 10% of webhook traffic now reaches the backend. Duplicate-driven race conditions were eliminated, and queue load and infrastructure cost dropped substantially.',
     stack: ['Azure Functions', 'Service Bus', 'Terraform', 'Redis'],
   },
   {
@@ -80,14 +80,14 @@ export const caseStudies = [
     approach:
       'Helped design and ship a single unified V3 API contract that normalizes submission, validation, and processing across all content types behind one surface.',
     result:
-      'One endpoint now handles YouTube, podcasts, audio, video, PDF, DOCX, PPTX, images, and articles — a drastically simpler integration surface for every client.',
+      'One endpoint now handles YouTube, podcasts, audio, video, PDF, DOCX, PPTX, images, and articles — a significantly simpler integration surface for every client.',
     stack: ['Laravel 12', 'API design', 'Queues'],
   },
   {
     tag: 'TubeOnAI · Security & Performance',
     title: 'Hardening a Production SaaS',
     problem:
-      'A critical access-control flaw exposed cross-user data, inefficient query patterns dragged down hot paths, and a recurring failure loop kept paging the team.',
+      'A critical access-control flaw exposed cross-user data, inefficient query patterns slowed high-traffic paths, and a recurring failure loop caused repeated production alerts.',
     approach:
       'Worked on hardening across the API surface: ownership checks enforced on every endpoint, error responses sanitized, the expensive query patterns eliminated, and the failure loop fixed at its root cause.',
     result:
@@ -143,21 +143,21 @@ export const processSteps = [
   {
     step: '01',
     title: 'Understand the domain',
-    body: 'I map the data model, the failure modes, and who gets hurt when things break — before writing code. Backend work is domain work.',
+    body: 'Before writing code, I map the data model, the failure modes, and who is affected when something breaks. Good backend work starts with understanding the domain.',
   },
   {
     step: '02',
     title: 'Plan in small slices',
-    body: 'Reviewable PRs with clear acceptance criteria and test plans — not 2,000-line surprises. Scope honestly, flag risk early.',
+    body: 'Small, reviewable pull requests with clear acceptance criteria and test plans. I scope work honestly and flag risks early.',
   },
   {
     step: '03',
     title: 'Build with gates',
-    body: 'TDD where it pays off, static analysis always: PHPStan, Pint, and Pest on Laravel; gofmt, vet, and fixture-parity gates on Go. CI-green is non-negotiable.',
+    body: 'Test-driven where it adds value, static analysis always: PHPStan, Pint, and Pest on Laravel; gofmt, vet, and fixture-parity gates on Go. Every merge passes CI.',
   },
   {
     step: '04',
     title: 'Ship and own it',
-    body: 'Deploys, monitoring in Sentry and Grafana, and the incident channel afterwards. I own what I ship — that’s where the reliability stories above come from.',
+    body: 'Deployment, monitoring in Sentry and Grafana, and follow-through when issues surface. I take ownership of what I ship.',
   },
 ]
