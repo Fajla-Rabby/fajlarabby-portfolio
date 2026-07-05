@@ -29,8 +29,7 @@ No config needed — it's a static Vite site:
 Search the codebase for `[PLACEHOLDER]`. Everything editable lives in `src/data.js`:
 
 1. **Upwork profile URL** — `links.upwork` in `src/data.js`
-2. **Resume PDF** — drop `fajla-rabby-resume.pdf` into `public/`; path is `links.resume`
-3. **Profile photo** — drop a compressed image (<150KB, ~800×800) into `public/` and swap the
+2. **Profile photo** — drop a compressed image (<150KB, ~800×800) into `public/` and swap the
    placeholder div in `src/components/About.jsx` (instructions are in a comment there).
    Note: `C:\Projects\portfolio\profile.jpg` exists but is 3.4MB — compress it first
    (e.g. squoosh.app → WebP, quality ~75).

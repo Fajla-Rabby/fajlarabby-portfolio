@@ -41,7 +41,7 @@ export default function Contact() {
             </li>
             <li>
               <a href={links.linkedin} target="_blank" rel="noreferrer" className="link-underline text-mist hover:text-white">
-                linkedin.com/in/fajla-rabby ↗
+                linkedin.com/in/fajlarabby666 ↗
               </a>
             </li>
             <li className="text-mist">{links.phone}</li>
